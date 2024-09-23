@@ -1,0 +1,64 @@
+:host {
+    top: 50%;
+    left: 50%;
+    width: 128px;
+    height: 128px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    position: absolute;
+    color: #E0AAAA;
+    background-color: #d5d5d5;
+    border: 1px solid #ffffff;
+    box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+    cursor: grab;
+    pointer-events: all;
+
+    &.disabled {
+        pointer-events: none;
+    }
+
+    &::before,
+    &::after {
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        opacity: 0;
+        content: ' ';
+        display: block;
+        position: absolute;
+        pointer-events: none;
+        transition: opacity 0.1s ease-in-out;
+    }
+
+    &::before {
+        z-index: 0;
+        background: currentColor;
+    }
+
+    &::after {
+        z-index: 1;
+        border: 2px solid #ffffff;
+        box-shadow: 0 0 16px 0 currentColor, 0 0 8px 0 currentColor, 0 0 32px 0 currentColor;
+    }
+
+    &:hover {
+        outline: 1px solid hsl(0, 0%, 100%);
+
+        &::before {
+            opacity: 0.5;
+        }
+
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

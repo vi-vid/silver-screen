@@ -1,0 +1,25 @@
+<app-grid-screen class="drag-animate" cdkDrag>
+  <app-grid-cell [coordinates]="{ x: 0, y: 0 }">
+    <app-user-cell-content (addMovie)="openSearchPanel()"></app-user-cell-content>
+  </app-grid-cell>
+
+  @for (cell of cells(); track $index) {
+    <app-grid-cell [coordinates]="cell.coordinates">
+      <app-movie-cell-content [movieId]="cell.movieId" (openDetails)="openDetailsPanel(cell.movieId)"></app-movie-cell-content>
+    </app-grid-cell>
+  }
+</app-grid-screen>
+
+@if (isSearchOpen()) {
+  <div class="panel">
+    <div class="panel-backdrop" (click)="closeSearchPanel()"></div>
+    <app-search-form></app-search-form>
+  </div>
+}
+
+@if (openedMovie(); as openedMovieId) {
+  <div class="panel">
+    <div class="panel-backdrop" (click)="closeDetailsPanel()"></div>
+    <app-movie-details [movieId]="openedMovieId" (removeFromFavorites)="removeMovieFromFavorites(openedMovieId)"></app-movie-details>
+  </div>
+}

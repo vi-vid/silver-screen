@@ -1,0 +1,5 @@
+@if (movie(); as movie) {
+    <img [src]="movie.image ?? 'missing-image.png'" [alt]="movie.title" [title]="movie.title">
+
+    <button type="button" (click)="openMovieDetails()">☐</button>
+}

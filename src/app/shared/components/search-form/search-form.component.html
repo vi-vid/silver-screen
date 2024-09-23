@@ -1,0 +1,30 @@
+<input #search type="text" placeholder="poor things" [formControl]="searchFormControl">
+
+@if (vm(); as vm) {
+    @if (!vm.isLoading) {
+        @if (vm.items.length) {
+            <div class="search-result-wrapper">
+                <div class="search-results">
+                    @for (movie of vm.items; track $index) {
+                        <button type="button" title="add to favorites" class="search-item" (click)="addMovieToFavorites(movie.id)">
+                            {{ movie.title }}<span class="favorite-icon">♡</span>
+                        </button>
+                    }
+                </div>
+            </div>
+        } @else if (vm.error) {
+            <div class="search-result-wrapper">
+                <div class="search-results">
+                    <div class="search-item">{{ vm.error }}</div>
+                </div>
+            </div>
+        }
+    } @else {
+        <div class="search-result-wrapper">
+            <div class="search-results">
+                <div class="search-item">loading...</div>
+            </div>
+        </div>
+
+    }
+}

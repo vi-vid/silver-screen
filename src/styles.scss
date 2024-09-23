@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'reset-css';
+
+body {
+    background: #000000;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}

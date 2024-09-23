@@ -1,0 +1,41 @@
+:host {
+    margin: 16px;
+    padding: 16px;
+    position: relative;
+    background-color: #d5d5d5;
+    border: 2px solid #ffffff;
+    text-transform: uppercase;
+    box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+legend {
+    font-size: 12px;
+    font-weight: 100;
+}
+
+fieldset {
+    max-width: 512px;
+
+    & + & {
+        margin-top: 8px;
+    }
+}
+
+button {
+    margin: 8px auto -8px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+    font-weight: 100;
+    display: block;
+
+    &:focus,
+    &:hover {
+        background-color: rgba(255,255,255,0.5);
+    }
+}

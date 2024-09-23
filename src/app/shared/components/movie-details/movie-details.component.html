@@ -1,0 +1,79 @@
+@if (movie(); as movie) {
+    <fieldset>
+        <legend>title</legend>
+        <p>{{ movie.title }}</p>
+    </fieldset>
+
+    <fieldset>
+        <legend>year</legend>
+        <p>{{ movie.year }}</p>
+    </fieldset>
+
+    <fieldset>
+        <legend>plot</legend>
+        <p>{{ movie.plot }}</p>
+    </fieldset>
+
+    <fieldset>
+        <legend>rated</legend>
+        <p>{{ movie.rated }}</p>
+    </fieldset>
+
+    @if (movie.releaseDate) {
+        <fieldset>
+            <legend>release date</legend>
+            <p>{{ movie.releaseDate | date: 'yyyy. MM. dd.' }}</p>
+        </fieldset>
+    }
+
+    @if (movie.runtime) {
+        <fieldset>
+            <legend>runtime</legend>
+            <p>{{ movie.runtime }}</p>
+        </fieldset>
+    }
+
+    @if (movie.genres.length) {
+        <fieldset>
+            <legend>genres</legend>
+            <p>{{ movie.genres.join(' - ') }}</p>
+        </fieldset>   
+    }
+
+    @if (movie.directors.length) {
+        <fieldset>
+            <legend>directors</legend>
+            <p>{{ movie.directors.join(', ') }}</p>
+        </fieldset>   
+    }
+
+    @if (movie.writers.length) {
+        <fieldset>
+            <legend>writers</legend>
+            <p>{{ movie.writers.join(', ') }}</p>
+        </fieldset>   
+    }
+
+    @if (movie.actors.length) {
+        <fieldset>
+            <legend>actors</legend>
+            <p>{{ movie.actors.join(', ') }}</p>
+        </fieldset>   
+    }
+
+    @if (movie.languages.length) {
+        <fieldset>
+            <legend>languages</legend>
+            <p>{{ movie.languages.join(', ') }}</p>
+        </fieldset>   
+    }
+
+    @if (movie.rating && movie.votes) {
+        <fieldset>
+            <legend>rating</legend>
+            <p>{{ movie.rating }} of {{ movie.votes }} votes</p>
+        </fieldset>   
+    }
+
+    <button type="button" title="remove from favorites" (click)="removeMovieFromFavorites()">♥</button>
+}

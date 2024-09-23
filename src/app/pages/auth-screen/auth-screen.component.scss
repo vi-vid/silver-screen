@@ -1,0 +1,32 @@
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+button {
+  flex: 1;
+  z-index: 1;
+  border: none;
+  height: 100%;
+  display: block;
+  cursor: pointer;
+  background: none;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.cell {
+  animation: pulse 5s infinite cubic-bezier(0.09, 0.4, 0.97, 0.83);
+  outline: 1px solid #ffffff;
+}
+
+b {
+  font-weight: 900;
+}
