@@ -12,7 +12,6 @@ export class LoginScreenGuard implements CanActivate {
   public canActivate(): Observable<boolean> | Promise<boolean> {
     return this.store.select(fromUser.selectIsLoggedIn$).pipe(
       switchMap((isLoggedIn) => {
-        console.log(isLoggedIn);
         if (isLoggedIn) {
           return this.router.navigateByUrl('/');
         }
