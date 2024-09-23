@@ -1,13 +1,13 @@
 import { inject, Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { concatLatestFrom } from "@ngrx/operators";
-import { catchError, combineLatest, concatMap, map, noop, of, switchMap } from "rxjs";
+import { catchError, concatMap, map, of, switchMap } from "rxjs";
 import { UserActions } from "../user/user.actions";
 import { Store } from "@ngrx/store";
 import { fromMovies } from "./movie.selector";
 import { MovieActions } from "./movie.actions";
 import { HttpClient } from "@angular/common/http";
-import { Movie, MovieDetails } from "../../shared/interfaces/movie.interface";
+import { MovieDetails } from "../../shared/interfaces/movie.interface";
 
 interface MovieDetailsResponse {
     Title: string;

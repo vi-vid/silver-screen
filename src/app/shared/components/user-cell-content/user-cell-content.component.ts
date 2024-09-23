@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, output, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output, signal } from '@angular/core';
 import { SearchFormComponent } from '../search-form/search-form.component';
 
 @Component({
@@ -10,6 +10,7 @@ import { SearchFormComponent } from '../search-form/search-form.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserCellContentComponent {
+  public username = input.required<string>();
   public addMovie = output<void>();
 
   public addMovieClick(): void {

@@ -1,7 +1,7 @@
 import { Movie } from "../../interfaces/movie.interface";
 
 export interface SearchFormVM {
-    isLoading: boolean;
-    hasError: boolean;
-    items: Movie[];
-  }
+  isLoading: boolean;
+  hasError: boolean;
+  items: Movie[];
+}

@@ -7,7 +7,7 @@
                 <div class="search-results">
                     @for (movie of vm.items; track $index) {
                         <button type="button" title="add to favorites" class="search-item" (click)="addMovieToFavorites(movie.id)">
-                            {{ movie.title }}<span class="favorite-icon">♡</span>
+                            {{ movie.title }} ({{ movie.year }})<span class="favorite-icon">♡</span>
                         </button>
                     }
                 </div>
@@ -25,6 +25,5 @@
                 <div class="search-item">loading...</div>
             </div>
         </div>
-
     }
 }

@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { GridScreenComponent } from '../../shared/components/grid-screen/grid-screen.component';
 import { GridCellComponent } from '../../shared/components/grid-cell/grid-cell.component';
-import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { fromUser } from '../../stores/user/user.selector';
 import { UserActions } from '../../stores/user/user.actions';
 
 @Component({

@@ -10,8 +10,10 @@ export class MainScreenService {
     
     public vm: Signal<MainScreenVM> = computed(() => {
         const favoriteIdSet = this.store.selectSignal(fromUser.selectFavorites$)();
+        const username = this.store.selectSignal(fromUser.selectUsername$)();
         return {
-            favoriteIds: [...(favoriteIdSet || [])]
+            favoriteIds: [...(favoriteIdSet || [])],
+            username: username!
         };
     });
 

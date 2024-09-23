@@ -1,6 +1,6 @@
 <app-grid-screen class="drag-animate" cdkDrag>
   <app-grid-cell [coordinates]="{ x: 0, y: 0 }">
-    <app-user-cell-content (addMovie)="openSearchPanel()"></app-user-cell-content>
+    <app-user-cell-content [username]="vm().username" (addMovie)="openSearchPanel()"></app-user-cell-content>
   </app-grid-cell>
 
   @for (cell of cells(); track $index) {

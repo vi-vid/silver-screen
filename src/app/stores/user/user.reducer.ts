@@ -20,7 +20,7 @@ export const userReducer = createReducer(
       return {
         ...state,
         user: {
-          name: 'user.name',
+          name: 'mark.ruffalo',
           favoriteMovieIds: new Set([]),
         },
       };

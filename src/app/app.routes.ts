@@ -8,11 +8,13 @@ import { LoginScreenGuard } from './shared/guards/login-screen-guard.guard';
 export const routes: Routes = [
   {
     path: '',
+    title: 'silver screen',
     component: MainScreenComponent,
     canActivate: [AuthGuard],
   },
   {
     path: 'auth',
+    title: 'silver screen ☐ auth',
     component: AuthScreenComponent,
     canActivate: [LoginScreenGuard],
   },
